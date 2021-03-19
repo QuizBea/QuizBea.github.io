@@ -1,47 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fonts.cdnfonts.com/css/bahnschrift" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>QuizBea</title>
-</head>
-<body>
-        <header>
-            <nav>
-                <img class="nav__logo" src="./media/logo.svg">
-                <div class="nav__pages">
-                        <span><a href="#">Home</a></span>
-                        <span><a href="#">About</a></span>
-                        <span><a href="#">Contact</a></span>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <title>QuizBea</title>
+        
+        <meta name="description" content="QuizBea">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link href="http://fonts.cdnfonts.com/css/bahnschrift" rel="stylesheet">
+
+
+        <script src="script.js"></script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                background-image: url(./media/background.svg);
+                font-family: 'bahnschrift', arial;
+            }
+            .navbar{
+                background-color:rgba(0, 0, 0, 0.2);
+            }
+            .navbar-brand{
+                height: 100%;
+                width: 100%;
+            }
+            @media only screen and (min-width: 766px){
+                .navbar-nav > li{
+                    padding-left: 30px;
+                    padding-right:0px;
+                }
+            }
+            #navbarNav a{
+                color: white;
+                font-size: 22px;
+            }
+            .hero{
+                position: relative;
+                top: 60px;  /*60px*/
+                
+                padding-bottom: 0px;
+            }
+            .hero img{
+                width: 100%;
+            }
+            .glass{
+                position: relative;
+                bottom: 45%; /*120px*/
+                right: 5%; /*18px*/
+                background-color: #FFFF;
+                width: 110%; /*418px*/
+                height: 103px;
+                border-radius: 50px 0px;
+                border: 6px solid #0000;
+                border-image: linear-gradient(to right, blue , yellow);
+                border-image-slice: 1;
+                filter: blur(3px);
+                filter: opacity(10%);
+            }
+            .sub__text{
+                position: relative;
+                font-size: 50px;
+                color: #FFFF;
+            }
+            .junior{
+                position: relative;
+                top: 20px;
+                left: 30%;
+                width: 252px;
+                height: 82px;
+                /*background-color: #FFFF;*/
+                background-color: blue;
+                filter: blur(5px);
+                filter: opacity(30%);
+                border-radius: 50px;
+                transition: 200ms ease-in;
+            }
+/*
+            .junior:hover{
+                background-color: blue;
+            }
+*/
+            .junior__btn{
+                position: relative;
+                left: 37%;
+                bottom: 30%;
+            }
+
+            .senior{
+                position: relative;
+                top: 20px;
+                left: 30%;
+                width: 252px;
+                height: 82px;
+                /*background-color: #FFFF;*/
+                background-color: rgb(255, 238, 0);
+                filter: blur(5px);
+                filter: opacity(30%);
+                border-radius: 50px;
+                transition: 200ms ease-in;
+            }
+/*
+            .senior:hover{
+                background-color: rgb(255, 238, 0);
+            }
+*/
+            .senior__btn{
+                position: relative;
+                left: 37%;
+                bottom: 30%;
+            }
+            .footer{
+                position: fixed;
+                width: 100vw;
+                height: 44px;
+                bottom: 0%;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .footer p{
+                position: relative;
+                left: 40%;
+                font-size: 17px;
+                color: rgba(255, 255, 255, 0.8);
+                font-family: 'Cambria';
+                padding: 10px 0px;
+            }
+            @media only screen and (max-width:420px){
+                .hero{
+                    left: 10%;
+                    width: 90%;
+                }
+                .sub__text{
+                    font-size: 32px;
+                    width: 90%;
+                }
+                .junior{
+                    left: 10%;
+                    width: 75%;
+                }
+                .junior__btn{
+                    left: 20%;
+                }
+                .senior{
+                    left: 10%;
+                    width: 75%;
+                }
+                .senior__btn{
+                    left: 20%;
+                }
+                .footer{
+                    position: inherit;
+                    bottom: 0%;
+                    padding: 0%;
+                    margin: 0%;
+                    width: 100vw;
+                }
+                .footer p{
+                    left: 15%;
+                    font-size: 15px;
+                }
+            }
+            /*
+            .row{
+                border: 1px dotted blue;
+            }
+            .col{
+                border: 1px dotted red;
+            }
+            */
+            
+        </style>
+    </head>
+    <body>
+
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="./media/logo.svg" alt="logo.svg">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse order-3" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"></li>
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
-        </header>
-        <main>
-            <div class="title__text">
-                <img class="welcome" src="./media/welcome.svg">
-                <div class="glass"></div>
+            <div class="container">
+                <div class="row justify-content-around hero">
+                    <div class="title__text">
+                        <img class="welcome" src="./media/welcome.svg">
+                        <div class="glass"></div>
+                    </div>
+                </div>
+                <div class="row justify-content-around">
+                    <div class="sub__text">
+                        Test Your Knowledge in 
+                        <span
+                            class="txt-rotate"
+                            data-period="2000"
+                            data-rotate='[ "Physics.", "Chemistry.", "Biology." ]'></span>
+                        <!--<p>Test Your Knowledge in Physics</p>-->
+                    </div>
+                </div>
+                <div class="row justify-content-around btns">
+                    <div class="col">
+                        <div class="junior"></div>
+                        <a href="#"><img class="junior__btn" src="./media/junior.svg"></a>
+                    </div>
+                    <div class="col">
+                        <div class="senior"></div>
+                        <a href="#"><img class="senior__btn" src="./media/senior.svg"></a>
+                    </div>
+                </div>
             </div>
-            <div class="sub__text">
-                Test Your Knowledge in 
-                <span
-                    class="txt-rotate"
-                    data-period="2000"
-                    data-rotate='[ "Physics.", "Chemistry.", "Biology." ]'></span>
-                <!--<p>Test Your Knowledge in Physics</p>-->
+            <div class="row footer">
+                <p>A Project by Royal College Science Association</p>
             </div>
-            <div class="btns">
-                <div class="junior"></div>
-                <div class="junior__border"></div>
-                <a href="#"><img class="junior__btn" src="./media/junior.svg"></a>
-                <div class="senior"></div>
-                <a href="#"><img class="senior__btn" src="./media/senior.svg"></a>
-            </div>
-        </main>
-        <footer>
-            <p>A Project by Royal College Science Association</p>
-        </footer>
-</body>
+            
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
 </html>
