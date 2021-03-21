@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="370" height="166.5" viewBox="0 0 370 166.5">
+  <defs>
+    <filter id="_Follow_Us" x="0" y="0" width="370" height="166.5" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#_Follow_Us)">
+    <text id="_Follow_Us-2" data-name="
+Follow Us" transform="translate(185 32.5)" fill="#fff" stroke="#37383d" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" font-size="40" font-family="Bahnschrift" font-weight="600"><tspan x="0" y="0"></tspan><tspan font-size="80"><tspan x="-176.777" y="100">Follow Us</tspan></tspan></text>
+  </g>
+</svg>
